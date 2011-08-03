@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  description: MyText
+  start_time: 2011-08-02
+  end_time: 2011-08-02
+  location: MyString
+  contact: MyString
+  email: MyString
+  announce_start_time: 2011-08-02
+  announce_end_time: 2011-08-02
+
+two:
+  title: MyString
+  description: MyText
+  start_time: 2011-08-02
+  end_time: 2011-08-02
+  location: MyString
+  contact: MyString
+  email: MyString
+  announce_start_time: 2011-08-02
+  announce_end_time: 2011-08-02

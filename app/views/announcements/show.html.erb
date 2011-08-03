@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @announcement.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @announcement.description %>
+</p>
+
+<p>
+  <b>Start time:</b>
+  <%= @announcement.start_time %>
+</p>
+
+<p>
+  <b>End time:</b>
+  <%= @announcement.end_time %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @announcement.location %>
+</p>
+
+<p>
+  <b>Contact:</b>
+  <%= @announcement.contact %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @announcement.email %>
+</p>
+
+<p>
+  <b>Announce start time:</b>
+  <%= @announcement.announce_start_time %>
+</p>
+
+<p>
+  <b>Announce end time:</b>
+  <%= @announcement.announce_end_time %>
+</p>
+
+
+<%= link_to 'Edit', edit_announcement_path(@announcement) %> |
+<%= link_to 'Back', announcements_path %>
