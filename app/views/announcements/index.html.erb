@@ -1,39 +1,42 @@
-<h1>Listing announcements</h1>
+<div id="wrapper">
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Start time</th>
-    <th>End time</th>
-    <th>Location</th>
-    <th>Contact</th>
-    <th>Email</th>
-    <th>Announce start time</th>
-    <th>Announce end time</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <h1>Skule Announcements</h1>
 
-<% @announcements.each do |announcement| %>
-  <tr>
-    <td><%= announcement.title %></td>
-    <td><%= announcement.description %></td>
-    <td><%= announcement.start_time %></td>
-    <td><%= announcement.end_time %></td>
-    <td><%= announcement.location %></td>
-    <td><%= announcement.contact %></td>
-    <td><%= announcement.email %></td>
-    <td><%= announcement.announce_start_time %></td>
-    <td><%= announcement.announce_end_time %></td>
-    <td><%= link_to 'Show', announcement %></td>
-    <td><%= link_to 'Edit', edit_announcement_path(announcement) %></td>
-    <td><%= link_to 'Destroy', announcement, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+  <h2>New this week</h2>
 
-<br />
+  <ul id="announcements">
+	
+  <% @announcements.each do |announcement| %>
+    <li>
+      
+      <div class="title">
+        <h3><%= announcement.title %>
+<!--
+          <span><%= link_to 'Edit', edit_announcement_path(announcement) %></span>
+          <span><%= link_to 'Delete', announcement, :confirm => 'Are you sure?', :method => :delete %></span>
+-->
+        </h3>
 
-<%= link_to 'New Announcement', new_announcement_path %>
+      </div>
+      <div class="content">
+        <h5><%= announcement.start_time.strftime("%I:%M %m/%d/%Y") %> - <%= announcement.end_time %></h5>
+        <h5 class="location"><%= announcement.location %></h5>
+        <p><%= announcement.description %></p>
+    
+    
+        <b><%= announcement.contact %></b>
+        <h6><%= announcement.email %></h6>
+
+        <div class="more"><a href="#">more</a></div>
+
+      </div>
+    </li>
+  <% end %>
+
+  </ul>
+
+  <br />
+
+  <%= link_to 'New Announcement', new_announcement_path %>
+  
+</div>
