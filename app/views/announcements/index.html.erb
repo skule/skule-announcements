@@ -1,9 +1,5 @@
-<div id="wrapper">
-
-  <h1>Skule Announcements</h1>
-
-  <h2>New this week</h2>
-
+  <h1><span>Skule </span>Announcements</h1>
+  
   <ul id="announcements">
 	
   <% @announcements.each do |announcement| %>
@@ -12,24 +8,34 @@
       <div class="title">
         <h3><%= announcement.title %>
 <!--
-          <span><%= link_to 'Edit', edit_announcement_path(announcement) %></span>
           <span><%= link_to 'Delete', announcement, :confirm => 'Are you sure?', :method => :delete %></span>
 -->
         </h3>
 
       </div>
-      <div class="content">
-        <h5><%= announcement.start_time.strftime("%I:%M %m/%d/%Y") %> - <%= announcement.end_time %></h5>
+      
+      <div class="meta">
+        
+        <h5><%= announcement.happening_on %></h5>
         <h5 class="location"><%= announcement.location %></h5>
-        <p><%= announcement.description %></p>
+        
+      </div>
+      
+      <div class="content">
+
+       <p><%= announcement.summary %></p>
+       <div class="more"><p><a href="#">Read description</a></p></div>
     
-    
+ <!--   
         <b><%= announcement.contact %></b>
         <h6><%= announcement.email %></h6>
+-->
 
-        <div class="more"><a href="#">more</a></div>
 
       </div>
+      
+      <div class="clear"></div>
+      
     </li>
   <% end %>
 
@@ -37,6 +43,6 @@
 
   <br />
 
-  <%= link_to 'New Announcement', new_announcement_path %>
+<!--  <%= link_to 'New Announcement', new_announcement_path %>-->
   
 </div>
