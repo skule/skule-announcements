@@ -58,241 +58,137 @@ div.field, div.actions {
 /* ------------------------------- */
 
 body {
-  
   margin: 0px;
   padding: 0px;
-  
-  background: #fafafa;
-  
+  background: #f9f9f9;
 }
 
 h1 {
-
   margin: 20px 0px;
   margin-left: -1px;
   padding: 0px 0px 0px 170px;
   line-height: 59px;
-  background: url(../images/logo.gif) no-repeat center left;
-  
+  background: url('../images/logo.gif') no-repeat center left;
   font-size: 20px;
   color: #555;
-
 }
 
 h1 span {
-
   display: none;
-
 }
 
 
 h3 {
-  
   font-size: 16px;
   line-height: 1.5em;
-  margin: 0.75em 0px;
-  
+  margin: 0;  
   font-weight: 100;
-  
 }
 
-
-
-#wrapper {
-  
+.wrapper {
   position: relative;
-  
   margin: 0px auto;
   padding: 0px;
-  
-  max-width: 700px;
-  width: 90%;
-  
-  /*
-  
-  width: 1000px;
-  margin: 0px auto 30px auto;
-  padding: 50px 0px;
-  background: url(../images/tackboard_2.png) top center;
-  background: #ccc;
-
-  
-  -moz-box-shadow: 0 0 12px 12px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 14px 14px rgba(0, 0, 0, 0.4);
-  */
+  max-width: 1000px;
+  width: 90%;  
 }
-/*
-.button {
 
+
+.user_nav {
   position: absolute;
-  right: 0px;
-  top: 20px;
+  top: 30px;
+  right: 0;
+}
+
+
+.announcements-container {
+  border: 6px solid #e8e8e8;
+  border-radius: 6px;
+  margin-bottom: 3.0em;
+}
+
+.announcements {
+  border: 1px solid #d0d0d0;
+  background: #fff;
+}
   
+.announcement-list {
+  width: 66.66%;
+  float: left;
+  margin: 0px;
+  padding: 0px;
+  
+  border-right: 1px solid #d0d0d0;
+  float: left;
+  list-style: none;
+}
+
+.announcement-list-item {
   display: block;
+  position: relative;
+  padding: 1.0em;
   
-  background: #eee;
-  border: 1px solid #bbb;
-  border-radius: 10px;
-  line-height: 20px;
-  padding: 0px 10px;
-  
+
+  border-bottom: 1px solid #e0e0e0;
+  background: #fdfdfd;
+
   text-decoration: none;
 
 }
 
-.button:hover {
 
-  background: #f4f4f4;
-  color: #333;
-
-}
-*/
-.blue {
-
-  background: #2268cf;
-  border: 1px solid #105090;
-  color: #fff !important;
-}
-
-.blue:hover {
-
-  background: #3278df;
+.announcement-list-item:hover {
+  cursor: pointer;
+  background: #d8eff8;
 
 }
 
-
-#announcements {
-  
-  margin: 0px;
-  padding: 0px;
-  
+.selected {
+  background: #e8f8ff;  
 }
 
-#announcements li {
-
-  position: relative;
-
-  margin: 30px 0px;
-  padding: 0px 25px 1.5em 25px;
-  
-  list-style: none;
-  
-  background: #fff;
-  border: 1px solid #ccc;
-
-  
-  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
-  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
-  box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.1);
-
-}
-
-#announcements .title {
-  
-  /*background: #cf5f5f;*/
-
-  padding: 5px 0px;
-  border-bottom: 1px solid #eee;
-  
-  color: #2B6B99;
-
-}
-
-
-#announcements textarea {
-  
-  width: 100%;
-
-  font-size: 16px;
-  line-height: 1.5em;
-  margin: 0.75em 0px;
-  
-  font-weight: 100;
-  
-}
-
-
-#announcements .meta {
-  
-  float: left;
-  position: relative;
-  
-  width: 30%;
-  margin-right: 3%;
-  
-}
-
-#announcements .meta h5 {
-  
-  font-weight: 100;
-  font-size: 11px;
-  
-  margin: 1.8em 0px;
-  
-  line-height: 1.8em;
-  
-  color: #888;
-  
-  
-}
-
-
-#announcements .content {
-  
-  float: left;
-  position: relative;
-  
-  width: 66%;
-  
-  /*height: 160px;*/
+.announcement-list-item h3 {
+  height: 1.5em;
+  width: 90%;
   overflow: hidden;
-  
 }
 
-#announcements .location {
-
-  
+.meta-time {
+  color: #aaa;
+  position: absolute;
+  right: 1.0em;
+  bottom: 1.2em;
+  display: block;
 }
 
-#announcements p {
-  
-  font-size: 11px;
+
+.announcement-details {
+
+  float: right;
+  width: 33%;
+  margin: 0;
+  padding: 0;
+
+}
+
+.announcement-details-item {
+
+  padding: 1.0em 2.0em;
+
+  list-style: none;
   text-align: justify;
-  
-  line-height: 1.8em;
-  margin: 1.8em 0px;
+
 }
 
 /*
-#announcements .more {
-  
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  
-  height: 20px;
-  padding: 30px 0px 15px 25px;
-  width: 100%;
-  
-  background-image: -webkit-gradient(
-    linear, left top, left bottom, from(rgba(255, 255, 255, 0.0)),
-    to(rgba(255, 255, 255, 1.0)), color-stop(.6,rgba(255, 255, 255, 1.0))
-  );
+.announce{
+  text-align: justify;
 
-  background-image: -moz-linear-gradient(
-    rgba(255, 255, 255, 0.0) 0%, rgba(255, 255, 255, 1.0) 60%
-  );
+}
+*/
 
-    
-}*/
-
-
-.editable h3:hover, .editable h5:hover, .editable p:hover {
-
-  background: #e0fbff;
-  cursor: text;
-
+.title {  
+  color: #2B6B99;
 }
 
 
@@ -304,6 +200,10 @@ h3 {
   clear: both;
   float: none;
   
+}
+
+.hidden {
+  display: none;
 }
 
 

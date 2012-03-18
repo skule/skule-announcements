@@ -3,48 +3,25 @@
 
 $(document).ready(function() {
 
-/*
-    $('#add').click(function() {
+    // If on announcement index page.
+    if($('.announcements').length > 0) {
     
-        var newItem = $('<li class="editable" style="display: none">'
-            + '<div class="title"><h3>New Skule Event</h3></div>'
-            + '<div class="meta"><h5>February 5th, 2011</h5>' 
-            + '<h5 class="location">Sandford Fleming Atrium</h5></div>' 
-            + '<div class="content"><p>You can put a more detailed descrption' 
-            + 'of your event here. :)</p></div>'
-            + '<div class="controls"><a href=""></</div><div class="clear"></div></li>');
+        $('.announcement-details-item').addClass('hidden');
     
-        $('#announcements').prepend(newItem);
-        
-        newItem.slideDown();
-    
+        $('.announcement-list-item').click(function() {
 
-        $('.editable h3').click(function(event) {
-    
-            var replaceTextarea = $('<textarea></textarea>');
-            var curText = $(event.target).text();
-    
-            $(event.target).replaceWith(replaceTextarea);
-            
-            replaceTextarea.val(curText);
-            replaceTextarea.focus();
-            
-            replaceTextarea.blur(function(event) {
-            
-                var curText = $(event.target).val();
-                
-                $(event.target).replaceWith('<h3>' + curText + '</h3>');
-            
-            
-            });
-    
+            $('.announcement-list-item').removeClass('selected');
+            $(this).addClass('selected')
+
+            $('.announcement-details-item').addClass('hidden');
+            $($(this).attr('href')).removeClass('hidden');
         });
-        
 
-        
-    });
 
-*/
+
+    }
+
+
 });
 
 

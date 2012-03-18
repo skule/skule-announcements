@@ -1,48 +1,49 @@
-  <h1><span>Skule </span>Announcements</h1>
-  
-  <ul id="announcements">
-	
-  <% @announcements.each do |announcement| %>
-    <li>
-      
-      <div class="title">
-        <h3><%= announcement.title %>
-<!--
-          <span><%= link_to 'Delete', announcement, :confirm => 'Are you sure?', :method => :delete %></span>
--->
-        </h3>
-
-      </div>
-      
-      <div class="meta">
+  <div class="announcements-container">
+    <div class="announcements">
+      <ul class="announcement-list">
+  	
+      <% @announcements.each do |announcement| %>
+        <li>
+          <a href="#announcement_<%= announcement.id %>" class="announcement-list-item">
         
-        <h5><%= announcement.happening_on %></h5>
-        <h5 class="location"><%= announcement.location %></h5>
+          <div class="title">
+            <h3><%= announcement.title %></h3>
+            <% if announcement.start_time != nil %>
+            <span class="meta-time"><%= Date::ABBR_MONTHNAMES[announcement.start_time.month] + " " + announcement.start_time.day.to_s %></span>
+            <% end %>
+          </div>
+          </a>
+        </li>
+      <% end %>
+      </ul>
+
+      <ul class="announcement-details">
+        <% @announcements.each do |announcement| %>
+        <li class="announcement-details-item" id="announcement_<%= announcement.id %>">
+            <div class="title">
+              <h3><%= announcement.title %></h3>
+            </div>
+            <div class="meta">
+              <h5><%= announcement.happening_on %></h5>
+              <h5 class="location"><%= announcement.location %></h5>
+            </div>
         
-      </div>
-      
-      <div class="content">
+            <div class="content">
 
-       <p><%= announcement.summary %></p>
-       <div class="more"><p><a href="#">Read description</a></p></div>
-    
- <!--   
-        <b><%= announcement.contact %></b>
-        <h6><%= announcement.email %></h6>
--->
+              <p><%= announcement.description %></p>
+              <b><%= announcement.contact %></b>
+              <h6><%= announcement.email %></h6>
 
+              <% if current_user %>
+              <span><%= link_to 'Delete', :confirm => 'Are you sure?', :controller => :announcements, :method => :delete %></span>
+            <% end %>
 
-      </div>
-      
+            </div>
+        </li>
+        <% end %>
+      </ul>
+
       <div class="clear"></div>
-      
-    </li>
-  <% end %>
-
-  </ul>
-
-  <br />
-
-<!--  <%= link_to 'New Announcement', new_announcement_path %>-->
-  
-</div>
+    
+    </div>
+  </div>
