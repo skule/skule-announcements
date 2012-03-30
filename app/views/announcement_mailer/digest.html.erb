@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <div style="width: 90%; max-width: 40.0em; margin: 0 auto; ">
+      <h2>Skule Announcements</h2>
+
+      <ul class="announcement-details" style="text-align: justify; margin: 0; padding: 0; list-style: none;">
+        <% @announcements.each do |announcement| %>
+        <li class="announcement-details-item" id="announcement_<%= announcement.id %>" style="margin: 0 0 3.0em 0; padding: 0;">
+            <div class="title">
+              <h3><%= announcement.title %></h3>
+            </div>
+            <div class="meta">
+              <h5 class="time"><%= announcement.happening_on %></h5>
+              <h5 class="location"><%= announcement.location %></h5>
+            </div>
+        
+            <div class="content">
+
+              <p class="text-justify"><%= announcement.summary %></p>
+
+              <% if announcement.contact && announcement.contact != "" %>
+              <p class="posted-by">
+                Posted by <%= announcement.contact %>
+              
+                <% if announcement.email && announcement.email != "" %>
+                </br><%= announcement.email %>
+                <% end %>
+              </p>
+              <% end %>
+
+            </div>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </body>
+</html>

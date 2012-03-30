@@ -15,6 +15,8 @@ $(document).ready(function() {
 
             $('.announcement-details-item').addClass('hidden');
             $($(this).attr('href')).removeClass('hidden');
+
+            return false;
         });
 
 

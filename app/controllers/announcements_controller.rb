@@ -1,8 +1,11 @@
 class AnnouncementsController < ApplicationController
+
+  
+
   # GET /announcements
   # GET /announcements.xml
   def index
-    @announcements = Announcement.all
+    @announcements = Announcement.all_current
 
     respond_to do |format|
       format.html # index.html.erb

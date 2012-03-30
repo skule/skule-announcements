@@ -24,15 +24,24 @@
               <h3><%= announcement.title %></h3>
             </div>
             <div class="meta">
-              <h5><%= announcement.happening_on %></h5>
+              <h5 class="time"><%= announcement.happening_on %></h5>
               <h5 class="location"><%= announcement.location %></h5>
             </div>
         
             <div class="content">
 
-              <p><%= announcement.description %></p>
-              <b><%= announcement.contact %></b>
-              <h6><%= announcement.email %></h6>
+              <p class="text-justify"><%= announcement.description %></p>
+
+              <% if announcement.contact && announcement.contact != "" %>
+              <p class="posted-by">
+                Posted by <%= announcement.contact %>
+              
+                <% if announcement.email && announcement.email != "" %>
+                </br><%= announcement.email %>
+                <% end %>
+              </p>
+              <% end %>
+
 
               <% if current_user %>
               <span><%= link_to 'Delete', :confirm => 'Are you sure?', :controller => :announcements, :method => :delete %></span>

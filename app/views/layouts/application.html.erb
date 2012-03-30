@@ -15,11 +15,14 @@
 
 		<div class="user_nav">
 			<% if current_user %>
-				Howdy <%= current_user.email %>!
+				Howdy <%= current_user.full %>!
 				<%= link_to "Log out", logout_path %>
-			<% else %>
-				<%= link_to "Sign up", sign_up_path %> or <%= link_to "Login", login_path %>  
 			<% end %>
+
+			<% if params[:controller] == "announcements" && params[:action] == "index" %>
+				<%= link_to "Make an announcement!", login_path %>
+			<% end %>
+
 		</div>
 
 

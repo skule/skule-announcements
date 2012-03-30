@@ -139,12 +139,15 @@ h3 {
 
 .announcement-list-item:hover {
   cursor: pointer;
-  background: #d8eff8;
+  background-color: #e0e8f0;
 
 }
 
 .selected {
-  background: #e8f8ff;  
+  background-color: #e8f0f8;
+  background-image: url('../images/arrow.png');
+  background-repeat: no-repeat;
+  background-position: center right;
 }
 
 .announcement-list-item h3 {
@@ -161,6 +164,9 @@ h3 {
   display: block;
 }
 
+.selected .meta-time {
+  display: none;
+}
 
 .announcement-details {
 
@@ -176,19 +182,29 @@ h3 {
   padding: 1.0em 2.0em;
 
   list-style: none;
-  text-align: justify;
 
 }
 
-/*
-.announce{
+.text-justify {
   text-align: justify;
 
 }
-*/
 
 .title {  
   color: #2B6B99;
+}
+
+.meta .location, .meta .time {
+  font-weight: 100;
+  font-size: 1.0em;
+  color: #777;
+}
+
+.posted-by {
+
+
+  margin-top: 2.0em;
+
 }
 
 

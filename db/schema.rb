@@ -15,9 +15,10 @@ ActiveRecord::Schema.define(:version => 20120301032624) do
   create_table "announcements", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.date     "start_time"
-    t.date     "end_time"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.string   "location"
+    t.string   "website"
     t.string   "contact"
     t.string   "email"
     t.date     "announce_start_time"

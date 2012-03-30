@@ -1,23 +1,86 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  title: MyString
-  description: MyText
-  start_time: 2011-08-02
-  end_time: 2011-08-02
-  location: MyString
-  contact: MyString
-  email: MyString
-  announce_start_time: 2011-08-02
-  announce_end_time: 2011-08-02
+  title: GRADITUDE - Leave Your Mark
+  description: "Donate to Graditude today and support the student experience in your department: http://graditude.skule.ca/
+               The tradition of Graditude began back in 1983, when a group of students took it upon themselves to address a deficiency in student club funding. In addition to holding a referendum where students voted to pay an additional $100 per year above regular tuition to help alleviate the shortfall in their equipment budget, they began Graditude as a way for graduating students to make a class pledge to give back to Skule™. The idea caught on and the rest of the University followed suit.
+               Today, Graditude is a way for you to leave your mark at Skule™. It is a gift to the future generations of Skule™ students who will benefit from your contributions. From the moment you stepped on campus, you have benefited from those who came before you. It's your chance to follow in the steps of Skule™ alumni.
+               Giving to Skule™ shows your class pride – and means a great deal to future classes. U of T Engineers educate future leaders, like you, who will help to shape the world. Think of giving back to Skule™ as an investment to better the society."
+  start_time: 24 Jan 2012 12:15am 
+  end_time: 13 Apr 2012 11:45pm
+  location: 
+  contact: 
+  website: 
+  email: engineering.advancement@ecf.utoronto.ca
+  announce_start_time: 2012-03-02
+  announce_end_time: 2012-05-02
 
 two:
-  title: MyString
-  description: MyText
-  start_time: 2011-08-02
-  end_time: 2011-08-02
-  location: MyString
-  contact: MyString
-  email: MyString
-  announce_start_time: 2011-08-02
-  announce_end_time: 2011-08-02
+  title: How to operate your UTmail+ account via Gmail
+  description: "Ever wanted to centralize all your email accounts to just a single account? Receive AND send emails via Gmail to save time and energy! EngSoc will show you how to do it!
+                Part 1: Finding the necessary UTmail+ account information
+                1. Opt-In to UTmail+ here: http://email.utoronto.ca/
+                2. Remember what your @mail.utoronto.ca email address is!
+                3. In your UTmail+ Outlook inbox, click on “Options” in the top-right corner and then click on “See All Options…”
+                4. On the Options page, find your Windows Live ID (e.g., utorID@mail.utoronto.ca)
+                5. Just below that, open the “Settings for POP, IMAP, and SMTP access...” window
+                Part 2: Accessing Gmail “Accounts and Import” Settings
+                1. In a new tab/window, login to your preferred Gmail account (the account you want to control your UTmail+ emails with).
+                2. Go to your Gmail Mail Settings (with the “new look”, click on the gear in the top-right corner and the click on “Mail Settings” or “Settings”).
+                3. Navigate to the “Accounts and Import” tab."
+  start_time: 12 Feb 2012 5:00pm
+  end_time: 30 Apr 2012 1:00am
+  location: 
+  contact: 
+  website: 
+  email: vpexternal@skule.ca
+  announce_start_time: 2012-03-02
+  announce_end_time: 2012-05-02
+
+three:
+  title: EngSoc Conference/Competition Funding Application
+  description: "Are you a student or club looking for funding to attend (or have attended) a conference?
+                The Engineering Society offers a subsidy of 15% up to 200$.
+                Please fill out the online application and we will contact you to let you know how much funding you are eligible for.
+                FORM : https://docs.google.com/a/g.skule.ca/spreadsheet/viewform?pli=1&formkey=...
+                More details are provided within the form."
+  start_time:   20 Feb 2012 12:00am
+  end_time:     31 Mar 2012 12:00am
+  location:
+  contact:
+  email: finance.secretary@g.skule.ca
+  announce_start_time: 2012-03-02
+  announce_end_time: 2012-05-02
+
+four:
+  title: Orientation 1T2 - F!rosh Nite, Skule Patrol, Hart House Farm
+  description: "Orientation 1T2 is now recruiting! If you want to be a part of Canada's largest undergraduate engineering orientation visit http://leedurs.skule.ca/join-the-team for position descriptions and the application form.
+                The following positions are now open:
+                - F!rosh Nite Director
+                - Skule Patrol Sub-Committee Chair
+                - Hart House Farm Sub-Committee Chair
+                If you have any questions contact orientation@skule.ca.
+                Applications are due April 2, 2012!"
+  start_time: 25 Mar 2012 10:00pm
+  end_time: 3 Apr 2012 11:45pm
+  location: 
+  contact: 
+  website: http://leedurs.skule.ca/join-the-team
+  email: orientation@skule.ca
+  announce_start_time: 2012-03-02
+  announce_end_time: 2012-05-02
+
+five:
+  title: Etachy - A new website team recruiting new members
+  description: "Etachy is a new website looking to improve the traffic of goods and service exchange. Starting at U of T, we hope to turn this project into something bigger and better for everyone.
+                We’re looking for creative and innovative recruits to input ideas, bring their university knowledge to the real world, experience the interaction of a small start up group and at the same time, have some fun. Some important skills include effective communication and ability to work independently. Web development skills and experiences are highly desirable.
+                If interested, contact alan.lu@etachy.com with your resume or a list of experiences and qualifications. If you have any questions or concerns, feel free to inquire."
+  start_time: 15 Jan 2012 10:45pm
+  end_time: 31 Aug 2012 11:45pm
+  location: 
+  contact: 
+  website: 
+  email: alan.lu@etachy.com
+  announce_start_time: 2012-03-02
+  announce_end_time: 2012-05-02
+
