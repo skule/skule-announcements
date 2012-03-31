@@ -1,24 +1,9 @@
   <div class="announcements-container">
+
     <div class="announcements">
-      <ul class="announcement-list">
-  	
-      <% @announcements.each do |announcement| %>
-        <li>
-          <a href="#announcement_<%= announcement.id %>" class="announcement-list-item">
-        
-          <div class="title">
-            <h3><%= announcement.title %></h3>
-            <% if announcement.start_time != nil %>
-            <span class="meta-time"><%= Date::ABBR_MONTHNAMES[announcement.start_time.month] + " " + announcement.start_time.day.to_s %></span>
-            <% end %>
-          </div>
-          </a>
-        </li>
-      <% end %>
-      </ul>
 
       <ul class="announcement-details">
-        <% @announcements.each do |announcement| %>
+        <% @all_announcements.each do |announcement| %>
         <li class="announcement-details-item" id="announcement_<%= announcement.id %>">
             <div class="title">
               <h3><%= announcement.title %></h3>
@@ -50,6 +35,45 @@
             </div>
         </li>
         <% end %>
+      </ul>
+
+    <% if admin_logged_in? %>
+
+      <div class="announcement-list-title"><h3>Pending Announcments</h3></div>
+      <ul class="announcement-list pending-announcments">
+        <% @pending_announcements.each do |announcement| %>
+        <li>
+          <a href="#announcement_<%= announcement.id %>" class="announcement-list-item">
+
+            <div class="title">
+              <h3><%= announcement.title %></h3>
+              <% if announcement.start_time != nil %>
+              <span class="meta-time"><%= Date::ABBR_MONTHNAMES[announcement.start_time.month] + " " + announcement.start_time.day.to_s %></span>
+              <% end %>
+            </div>
+          </a>
+        </li>
+        <% end %>
+      </ul>
+
+      <div class="announcement-list-title"><h3>Current Approved</h3></div>
+    <% end %>
+
+      <ul class="announcement-list current-approved-announcments">
+  	
+      <% @current_approved_announcements.each do |announcement| %>
+        <li>
+          <a href="#announcement_<%= announcement.id %>" class="announcement-list-item">
+        
+          <div class="title">
+            <h3><%= announcement.title %></h3>
+            <% if announcement.start_time != nil %>
+            <span class="meta-time"><%= Date::ABBR_MONTHNAMES[announcement.start_time.month] + " " + announcement.start_time.day.to_s %></span>
+            <% end %>
+          </div>
+          </a>
+        </li>
+      <% end %>
       </ul>
 
       <div class="clear"></div>

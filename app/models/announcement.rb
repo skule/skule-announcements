@@ -1,8 +1,11 @@
 class Announcement < ActiveRecord::Base
 
-  
-  def self.all_current
-    self.where("announce_start_time <= ? AND announce_end_time >= ?", Time.now, Time.now)
+  def self.all_current_approved
+    self.where("announce_start_time <= ? AND announce_end_time >= ? AND is_approved = ?", Time.now, Time.now, true)
+  end
+
+  def self.all_pending
+    self.where("is_approved = ?", false)
   end
 
   def happening_on

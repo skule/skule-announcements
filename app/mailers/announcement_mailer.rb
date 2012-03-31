@@ -3,7 +3,7 @@ class AnnouncementMailer < ActionMailer::Base
 
   def digest
 
-  	@announcements = Announcement.all_current
+  	@announcements = Announcement.all_current_approved
 
   	mail(:to => "ben.mccanny@gmail.com", :subject => "Skule Announcements")
 

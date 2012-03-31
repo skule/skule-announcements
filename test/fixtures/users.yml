@@ -1,11 +1,8 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  email: MyString
-  password_hash: MyString
-  password_salt: MyString
-
-two:
-  email: MyString
-  password_hash: MyString
-  password_salt: MyString
+  first_name: "Test"
+  last_name: "User"
+  email: "foo@ecf.utoronto.ca"
+  password_hash: "$2a$10$O5lEpshTdJvJ8rXb0LhgZeMf9mXbWocT9hSBAG8OUamr47h4mfTIG"
+  password_salt: "$2a$10$O5lEpshTdJvJ8rXb0LhgZe"

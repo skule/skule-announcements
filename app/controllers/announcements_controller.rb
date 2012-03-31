@@ -5,7 +5,13 @@ class AnnouncementsController < ApplicationController
   # GET /announcements
   # GET /announcements.xml
   def index
-    @announcements = Announcement.all_current
+    @pending_announcements = []
+    if admin_logged_in?
+      @pending_announcements = Announcement.all_pending
+    end
+
+    @current_approved_announcements = Announcement.all_current_approved
+    @all_announcements = @current_approved_announcements + @pending_announcements
 
     respond_to do |format|
       format.html # index.html.erb

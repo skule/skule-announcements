@@ -14,6 +14,7 @@ one:
   email: engineering.advancement@ecf.utoronto.ca
   announce_start_time: 2012-03-02
   announce_end_time: 2012-05-02
+  is_approved: true
 
 two:
   title: How to operate your UTmail+ account via Gmail
@@ -36,6 +37,7 @@ two:
   email: vpexternal@skule.ca
   announce_start_time: 2012-03-02
   announce_end_time: 2012-05-02
+  is_approved: true
 
 three:
   title: EngSoc Conference/Competition Funding Application
@@ -51,6 +53,7 @@ three:
   email: finance.secretary@g.skule.ca
   announce_start_time: 2012-03-02
   announce_end_time: 2012-05-02
+  is_approved: true
 
 four:
   title: Orientation 1T2 - F!rosh Nite, Skule Patrol, Hart House Farm
@@ -69,6 +72,7 @@ four:
   email: orientation@skule.ca
   announce_start_time: 2012-03-02
   announce_end_time: 2012-05-02
+  is_approved: false
 
 five:
   title: Etachy - A new website team recruiting new members
@@ -83,4 +87,4 @@ five:
   email: alan.lu@etachy.com
   announce_start_time: 2012-03-02
   announce_end_time: 2012-05-02
-
+  is_approved: false

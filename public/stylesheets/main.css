@@ -112,6 +112,21 @@ h3 {
   background: #fff;
 }
   
+.announcement-list-title {
+  width: 66.66%;
+  float: left;
+  border-right: 1px solid #d0d0d0;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #f0f0f0;
+}
+
+.announcement-list-title h3 {
+  padding: 1.0em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #666;
+}
+
 .announcement-list {
   width: 66.66%;
   float: left;

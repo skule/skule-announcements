@@ -15,7 +15,7 @@
 
 		<div class="user_nav">
 			<% if current_user %>
-				Howdy <%= current_user.full %>!
+				Howdy <%= current_user.full_name %>!
 				<%= link_to "Log out", logout_path %>
 			<% end %>
 
@@ -24,7 +24,6 @@
 			<% end %>
 
 		</div>
-
 
 	<% flash.each do |name, msg| %>
 		<%= content_tag :div, msg, :id => "flash_#{name}" %>
