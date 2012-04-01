@@ -3,6 +3,7 @@
 one:
   first_name: "Test"
   last_name: "User"
-  email: "foo@ecf.utoronto.ca"
+  email: "vpcomm@skule.ca"
   password_hash: "$2a$10$O5lEpshTdJvJ8rXb0LhgZeMf9mXbWocT9hSBAG8OUamr47h4mfTIG"
   password_salt: "$2a$10$O5lEpshTdJvJ8rXb0LhgZe"
+  is_admin: true

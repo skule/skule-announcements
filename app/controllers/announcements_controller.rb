@@ -89,4 +89,23 @@ class AnnouncementsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def approve
+    approve_or_reject(true)
+  end
+
+  def reject
+    approve_or_reject(false)
+  end
+
+  def approve_or_reject(is_approved)
+    announcement = Announcement.find(params[:id])
+    announcement.is_approved = is_approved
+    announcement.save
+
+    respond_to do |format|
+      format.html {redirect_to(announcements_url)}
+      format.xml  { head:ok }
+    end
+  end
 end

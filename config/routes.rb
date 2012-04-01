@@ -8,5 +8,8 @@ Announcements::Application.routes.draw do
   resources :users
   resources :sessions
 
-  resources :announcements
+  resources :announcements do
+  	get 'approve', :on => :member
+  	get 'reject', :on => :member
+  end
 end
