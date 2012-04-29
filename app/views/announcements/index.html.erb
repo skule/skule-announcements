@@ -14,7 +14,7 @@
             </div>
 
             <% if admin_logged_in? %>
-            <ul class="announcement-control-list">
+            <ul class="announcement-control-list control-list">
               <% if announcement.is_approved %>
                 <li class="announcement-control control"><%= link_to 'Reject', reject_announcement_path(announcement) %></li>
               <% else %>

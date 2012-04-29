@@ -126,7 +126,18 @@ input:hover {
 }
 
 input:focus {
-  border: 1px solid #aaa;
+  border: 1px solid #888;
+}
+
+.button {
+  font-size: 1.1em;
+  color: #666;
+}
+
+.button:hover {
+  font-size: 1.1em;
+  color: #444;
+  cursor: pointer;
 }
 
 .announcements-container, .users-container {
@@ -195,7 +206,7 @@ input:focus {
   background: #f8f8f8;
 }
 
-.announcement-control-list {
+.control-list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -206,35 +217,45 @@ input:focus {
   background-image: -webkit-linear-gradient(bottom, rgb(224,224,224), rgb(250,250,250));
 }
 
-
-.announcement-control {
+.control-list .control {
   float: left;
   border-left: 0px;
 }
 
 
-.announcement-control:first-child {
+.control-list .control:first-child {
   border-left: 1px solid #bbb;
   border-radius: 5px 0px 0px 5px;
 }
 
-.announcement-control:last-child {
+.control-list .control:last-child {
   border-radius: 0px 5px 5px 0px;
 }
 
-.announcement-control:hover {
+.control-list .control:hover {
   background: #e8e8e8;
 }
 
-.announcement-control a {
+.control a {
   display: block;
   padding: 0.5em;
   text-decoration: none;
   color: #666;
 }
 
-.announcement-control a:hover {
+.control a:hover {
   color: #444;
+}
+
+.user-control-list {
+  position: absolute;
+  right: 1.0em;
+  top: 0.7em;
+  visibility: hidden;
+}
+
+.user-list .list-item:hover .user-control-list {
+  visibility: visible;
 }
 
 .selected {
