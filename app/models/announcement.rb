@@ -1,11 +1,13 @@
 class Announcement < ActiveRecord::Base
 
+  before_save :set_defaults
+
   def self.all_current_approved
-    self.where("announce_start_time <= ? AND announce_end_time >= ? AND is_approved = ?", Time.now, Time.now, true)
+    self.where("announce_start_time <= ? AND announce_end_time >= ? AND is_approved = ?", Time.now, Time.now, true).order("start_time asc") 
   end
 
   def self.all_pending
-    self.where("is_approved = ?", false)
+    self.where("is_approved = ? OR is_approved = ?", false, nil).order("start_time asc")
   end
 
   def happening_on
@@ -29,6 +31,14 @@ class Announcement < ActiveRecord::Base
     # Take the first two sentences of the announcement description
     description[/.+\. .+\./]
       
+  end
+
+  def set_defaults
+    if self.is_approved == nil
+      self.is_approved = false
+    end
+
+    return true
   end
 
 end

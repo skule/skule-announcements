@@ -1,0 +1,39 @@
+  <div class="users-container">
+    <div class="users">
+
+      <div class="user-list-title list-title"><h3>Admin Users</h3></div>
+      <ul class="user-list admin-users list">
+        <% @admin_users.each do |user| %>
+        <li class="list-item">
+          <div class="title">
+            <h3><%= user.full_name %></h3>
+          </div>
+        </li>
+        <% end %>
+      <% if @admin_users.length == 0 %>
+        <li class="user-list-item-nolink list-item-nolink"><h3>No admin users</h3></li>
+      <% end %>
+      </ul>
+
+      <div class="user-list-title list-title"><h3>Regular Users</h3></div>
+
+      <ul class="user-list standard-users list">
+  	
+      <% @standard_users.each do |user| %>
+        <li class="list-item">
+          <div class="title">
+            <h3><%= user.full_name %></h3>
+          </div>
+        </li>
+      <% end %>
+
+      <% if @standard_users.length == 0 %>
+        <li class="user-list-item-nolink list-item-nolink"><h3>No regular users</h3></li>
+      <% end %>
+
+      </ul>
+
+      <div class="clear"></div>
+    
+    </div>
+  </div>

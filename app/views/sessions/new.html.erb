@@ -1,14 +1,18 @@
-<%= form_tag sessions_path do %>
+<%= form_tag sessions_path, :class => "login-form" do %>
 
+	<h3 class="title">Sign in</h3>
 	<p>
 		<%= label_tag :email %><br />
-		<%= text_field_tag :email, params[:email] %>
+		<%= text_field_tag :email, params[:email], :class => "text-field" %>
 	</p>
 	<p>
 		<%= label_tag :password %><br />
-		<%= password_field_tag :password, params[:password] %>
+		<%= password_field_tag :password, params[:password], :class => "text-field" %>
 	</p>
 
-	<p class="button"><%= submit_tag "Log in" %></p>
+	<p>
+		<%= submit_tag "Sign in", :class => "button control" %>
+		<%= link_to "Don't have an account?", signup_path, :class => "button-help-link" %>
+	</p>
 
 <% end %>

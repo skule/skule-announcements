@@ -16,12 +16,12 @@
             <% if admin_logged_in? %>
             <ul class="announcement-control-list">
               <% if announcement.is_approved %>
-                <li class="announcement-control"><%= link_to 'Reject', reject_announcement_path(announcement) %></li>
+                <li class="announcement-control control"><%= link_to 'Reject', reject_announcement_path(announcement) %></li>
               <% else %>
-                <li class="announcement-control"><%= link_to 'Approve', approve_announcement_path(announcement) %></li>
+                <li class="announcement-control control"><%= link_to 'Approve', approve_announcement_path(announcement) %></li>
               <% end %>
-              <li class="announcement-control"><%= link_to 'Edit', edit_announcement_path(announcement) %></li>
-              <li class="announcement-control"><%= link_to 'Delete', announcement_path(announcement), :confirm => 'Are you sure?', :method => :delete %></li>
+              <li class="announcement-control control"><%= link_to 'Edit', edit_announcement_path(announcement) %></li>
+              <li class="announcement-control control"><%= link_to 'Delete', announcement_path(announcement), :confirm => 'Are you sure?', :method => :delete %></li>
             </ul>
             <div class="clear"></div>
             <% end %>
@@ -46,11 +46,11 @@
 
     <% if admin_logged_in? %>
 
-      <div class="announcement-list-title"><h3>Pending Announcments</h3></div>
-      <ul class="announcement-list pending-announcments">
+      <div class="announcement-list-title list-title"><h3>Pending Announcments</h3></div>
+      <ul class="announcement-list list pending-announcments">
         <% @pending_announcements.each do |announcement| %>
         <li>
-          <a href="#announcement_<%= announcement.id %>" class="announcement-list-item">
+          <a href="#announcement_<%= announcement.id %>" class="announcement-list-item list-item">
 
             <div class="title">
               <h3><%= announcement.title %></h3>
@@ -61,16 +61,19 @@
           </a>
         </li>
         <% end %>
+        <% if @pending_announcements.length == 0 %>
+          <li class="announcement-list-item-nolink list-item-nolink"><h3>No pending announcements</h3></li>
+        <% end %>
       </ul>
 
-      <div class="announcement-list-title"><h3>Current Approved</h3></div>
+      <div class="announcement-list-title list-title"><h3>Current Approved</h3></div>
     <% end %>
 
-      <ul class="announcement-list current-approved-announcments">
+      <ul class="announcement-list list current-approved-announcments">
   	
       <% @current_approved_announcements.each do |announcement| %>
         <li>
-          <a href="#announcement_<%= announcement.id %>" class="announcement-list-item">
+          <a href="#announcement_<%= announcement.id %>" class="announcement-list-item list-item">
         
           <div class="title">
             <h3><%= announcement.title %></h3>
@@ -81,6 +84,11 @@
           </a>
         </li>
       <% end %>
+
+        <% if @current_approved_announcements.length == 0 %>
+          <li class="announcement-list-item-nolink list-item-nolink"><h3>No current announcements</h3></li>
+        <% end %>
+
       </ul>
 
       <div class="clear"></div>

@@ -15,6 +15,13 @@
 		<div class="user_nav">
 			<% if current_user %>
 				Howdy <%= current_user.full_name %>!
+			<% end %>
+
+			<% if admin_logged_in? %>
+				<%= link_to "Manage Users", users_path %>
+			<% end %>
+
+			<% if current_user %>
 				<%= link_to "Log out", logout_path %>
 			<% end %>
 

@@ -1,9 +1,41 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  first_name: "Test"
-  last_name: "User"
+  first_name: "VP"
+  last_name: "Communications"
   email: "vpcomm@skule.ca"
   password_hash: "$2a$10$O5lEpshTdJvJ8rXb0LhgZeMf9mXbWocT9hSBAG8OUamr47h4mfTIG"
   password_salt: "$2a$10$O5lEpshTdJvJ8rXb0LhgZe"
   is_admin: true
+
+two:
+  first_name: "VP"
+  last_name: "Finance"
+  email: "vpfinance@skule.ca"
+  password_hash: "$2a$10$O5lEpshTdJvJ8rXb0LhgZeMf9mXbWocT9hSBAG8OUamr47h4mfTIG"
+  password_salt: "$2a$10$O5lEpshTdJvJ8rXb0LhgZe"
+  is_admin: true
+
+three:
+  first_name: "VP"
+  last_name: "External"
+  email: "vpexternal@skule.ca"
+  password_hash: "$2a$10$O5lEpshTdJvJ8rXb0LhgZeMf9mXbWocT9hSBAG8OUamr47h4mfTIG"
+  password_salt: "$2a$10$O5lEpshTdJvJ8rXb0LhgZe"
+  is_admin: true
+
+four:
+  first_name: "EngSoc"
+  last_name: "President"
+  email: "president@skule.ca"
+  password_hash: "$2a$10$O5lEpshTdJvJ8rXb0LhgZeMf9mXbWocT9hSBAG8OUamr47h4mfTIG"
+  password_salt: "$2a$10$O5lEpshTdJvJ8rXb0LhgZe"
+  is_admin: false
+
+five:
+  first_name: "VP"
+  last_name: "Academic"
+  email: "vpacademic@skule.ca"
+  password_hash: "$2a$10$O5lEpshTdJvJ8rXb0LhgZeMf9mXbWocT9hSBAG8OUamr47h4mfTIG"
+  password_salt: "$2a$10$O5lEpshTdJvJ8rXb0LhgZe"
+  is_admin: false

@@ -101,11 +101,15 @@ class AnnouncementsController < ApplicationController
   def approve_or_reject(is_approved)
     announcement = Announcement.find(params[:id])
     announcement.is_approved = is_approved
-    announcement.save
 
     respond_to do |format|
-      format.html {redirect_to(announcements_url)}
-      format.xml  { head:ok }
+      if announcement.save
+        format.html { redirect_to(announcements_url) }
+        format.xml  { head:ok }        
+      else
+        format.html { redirect_to(announcements_url, :notice => 'Edit was not successfull.') }
+        format.xml  { render :xml => announcement.errors, :status => :unprocessable_entity }
+      end
     end
   end
 end

@@ -9,6 +9,13 @@ class User < ActiveRecord::Base
 	validates_presence_of  :email
 	validates_uniqueness_of :email
 
+	def self.all_admins
+		self.where("is_admin = ?", true)
+	end
+
+	def self.all_standard
+		self.where("is_admin = ?", false)
+	end
 
 	def self.authenticate(email, password)
 		user = find_by_email(email)

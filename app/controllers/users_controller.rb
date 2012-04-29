@@ -11,4 +11,14 @@ class UsersController < ApplicationController
       render "new"
     end
   end
+
+  def index
+    @admin_users = User.all_admins
+    @standard_users = User.all_standard
+
+    respond_to do |format|
+      format.html # index.html.erb
+    end
+
+  end
 end
