@@ -12,4 +12,10 @@ Announcements::Application.routes.draw do
   	get 'approve', :on => :member
   	get 'reject', :on => :member
   end
+
+  resources :users do
+    get 'promote', :on => :member
+    get 'demote', :on => :member
+  end
+  
 end

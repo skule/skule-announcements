@@ -90,15 +90,17 @@ class AnnouncementsController < ApplicationController
     end
   end
 
+  # GET /announcements/1/approve
   def approve
-    approve_or_reject(true)
+    set_is_approved(true)
   end
 
+  # GET /announcements/1/reject
   def reject
-    approve_or_reject(false)
+    set_is_approved(false)
   end
 
-  def approve_or_reject(is_approved)
+  def set_is_approved(is_approved)
     announcement = Announcement.find(params[:id])
     announcement.is_approved = is_approved
 

@@ -53,4 +53,33 @@ class UsersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  # GET /users/1/promote
+  def promote
+    set_is_admin(true)
+  end
+
+
+  # GET /users/1/demote
+  def demote
+    set_is_admin(false)
+  end
+
+  def set_is_admin(is_admin)
+    user = User.find(params[:id])
+    user.is_admin = is_admin
+
+    respond_to do |format|
+      if user.save
+        format.html { redirect_to(users_url) }
+        format.xml  { head:ok }        
+      else
+        format.html { redirect_to(users_url, :notice => 'Edit was not successfull.') }
+        format.xml  { render :xml => user.errors, :status => :unprocessable_entity }
+      end
+    end
+
+  end
+
+
 end

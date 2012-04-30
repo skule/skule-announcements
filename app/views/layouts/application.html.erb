@@ -17,18 +17,19 @@
 				Howdy <%= current_user.full_name %>!
 			<% end %>
 
-			<% if admin_logged_in? %>
+			<% if admin_logged_in? && params[:controller] == "announcements" %>
 				<%= link_to "Manage Users", users_path %>
-			<% end %>
-
-			<% if current_user %>
-				<%= link_to "Log out", logout_path %>
+			<% elsif admin_logged_in? && params[:controller] == "users" %>
+				<%= link_to "Return to Announcements", announcements_path %>
 			<% end %>
 
 			<% if params[:controller] == "announcements" && params[:action] == "index" %>
 				<%= link_to "Make an announcement!", login_path %>
 			<% end %>
 
+			<% if current_user %>
+				<%= link_to "Log out", logout_path %>
+			<% end %>
 		</div>
 
 	<% flash.each do |name, msg| %>
