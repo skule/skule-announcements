@@ -13,7 +13,7 @@ one:
   website: 
   email: engineering.advancement@ecf.utoronto.ca
   announce_start_time: 2012-03-02
-  announce_end_time: 2012-05-02
+  announce_end_time: 2012-09-02
   is_approved: true
 
 two:
@@ -36,7 +36,7 @@ two:
   website: 
   email: vpexternal@skule.ca
   announce_start_time: 2012-03-02
-  announce_end_time: 2012-05-02
+  announce_end_time: 2012-09-02
   is_approved: true
 
 three:
@@ -52,7 +52,7 @@ three:
   contact:
   email: finance.secretary@g.skule.ca
   announce_start_time: 2012-03-02
-  announce_end_time: 2012-05-02
+  announce_end_time: 2012-09-02
   is_approved: true
 
 four:
@@ -71,7 +71,7 @@ four:
   website: http://leedurs.skule.ca/join-the-team
   email: orientation@skule.ca
   announce_start_time: 2012-03-02
-  announce_end_time: 2012-05-02
+  announce_end_time: 2012-09-02
   is_approved: false
 
 five:
@@ -86,5 +86,5 @@ five:
   website: 
   email: alan.lu@etachy.com
   announce_start_time: 2012-03-02
-  announce_end_time: 2012-05-02
+  announce_end_time: 2012-09-02
   is_approved: false
