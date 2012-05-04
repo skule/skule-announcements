@@ -14,7 +14,7 @@ class CreateAnnouncements < ActiveRecord::Migration
       t.date      :announce_start_time
       t.date      :announce_end_time
 
-      t.boolean   :is_approved
+      t.boolean   :is_approved, :default => false
 
       t.timestamps
       

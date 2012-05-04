@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(:version => 20120301032624) do
     t.string   "email"
     t.date     "announce_start_time"
     t.date     "announce_end_time"
-    t.boolean  "is_approved"
+    t.boolean  "is_approved",         :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(:version => 20120301032624) do
     t.string   "email"
     t.string   "password_hash"
     t.string   "password_salt"
-    t.boolean  "is_admin"
+    t.boolean  "is_admin",      :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

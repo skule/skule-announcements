@@ -7,7 +7,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :password_hash
       t.string :password_salt
 
-      t.boolean :is_admin
+      t.boolean :is_admin, :default => false
 
       t.timestamps
     end
