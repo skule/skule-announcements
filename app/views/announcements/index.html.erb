@@ -9,6 +9,7 @@
               <h3><%= announcement.title %></h3>
             </div>
             <div class="meta">
+              <% if announcement.user != nil %><span class="author-name">Submitted by <%= announcement.user.full_name %></span><% end %>
               <h5 class="time"><%= announcement.happening_on %></h5>
               <h5 class="location"><%= announcement.location %></h5>
             </div>

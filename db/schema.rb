@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20120301032624) do
     t.date     "announce_start_time"
     t.date     "announce_end_time"
     t.boolean  "is_approved",         :default => false
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

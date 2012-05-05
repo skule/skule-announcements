@@ -16,6 +16,8 @@ class CreateAnnouncements < ActiveRecord::Migration
 
       t.boolean   :is_approved, :default => false
 
+      t.references :user
+
       t.timestamps
       
     end

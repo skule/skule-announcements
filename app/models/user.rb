@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+	has_many :announcments  # user_id field in announcments will default to null if a user is deleted
+
 	attr_accessor :password
 
 	before_save :encrypt_password

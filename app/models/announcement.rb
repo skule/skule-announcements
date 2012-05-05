@@ -1,5 +1,7 @@
 class Announcement < ActiveRecord::Base
 
+  belongs_to :user
+
   def self.all_current_approved
     self.where("announce_start_time <= ? AND announce_end_time >= ? AND is_approved = ?", Time.now, Time.now, true).order("start_time asc") 
   end

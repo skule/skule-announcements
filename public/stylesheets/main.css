@@ -312,6 +312,12 @@ input:focus {
   color: #2B6B99;
 }
 
+.author-name {
+  font-style: italic;
+  font-size: 0.8em;
+  color: #999;
+}
+
 .meta .location, .meta .time {
   font-weight: 100;
   font-size: 1.0em;

@@ -34,6 +34,11 @@ class AnnouncementsController < ApplicationController
   # GET /announcements/new.xml
   def new
     @announcement = Announcement.new
+    
+    if(current_user != nil)
+      @announcement.contact = current_user.full_name
+      @announcement.email = current_user.email
+    end
 
     respond_to do |format|
       format.html # new.html.erb
@@ -50,6 +55,7 @@ class AnnouncementsController < ApplicationController
   # POST /announcements.xml
   def create
     @announcement = Announcement.new(params[:announcement])
+    @announcement.user = current_user
 
     respond_to do |format|
       if @announcement.save
