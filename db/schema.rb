@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120301032624) do
+ActiveRecord::Schema.define(:version => 20120505175658) do
 
   create_table "announcements", :force => true do |t|
     t.string   "title"
@@ -25,6 +25,17 @@ ActiveRecord::Schema.define(:version => 20120301032624) do
     t.date     "announce_end_time"
     t.boolean  "is_approved",         :default => false
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "announcements_tags", :id => false, :force => true do |t|
+    t.integer "announcement_id"
+    t.integer "tag_id"
+  end
+
+  create_table "tags", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
