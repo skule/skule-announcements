@@ -17,14 +17,20 @@
 				Howdy <%= current_user.full_name %>!
 			<% end %>
 
-			<% if admin_logged_in? && params[:controller] == "announcements" %>
+			<% if admin_logged_in? && params[:controller] == "announcements" && params[:action] == "index" %>
 				<%= link_to "Manage Users", users_path %>
 			<% elsif admin_logged_in? && params[:controller] == "users" %>
 				<%= link_to "Return to Announcements", announcements_path %>
 			<% end %>
 
 			<% if params[:controller] == "announcements" && params[:action] == "index" %>
-				<%= link_to "Make an announcement!", login_path %>
+
+				<% if current_user %>
+					<%= link_to "Make an announcement!", new_announcement_path %>
+				<% else %>
+					<%= link_to "Make an announcement!", login_path %>
+				<% end %>
+
 			<% end %>
 
 			<% if current_user %>
