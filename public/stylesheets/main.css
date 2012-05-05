@@ -140,6 +140,16 @@ input:focus {
   cursor: pointer;
 }
 
+textarea {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  padding: 0.52em; /* 0.4em * 1.3em (same padding as input) */
+  resize: none;
+  color: #333;
+}
+
+
 .announcements-container, .users-container {
   border: 6px solid #e8e8e8;
   border-radius: 6px;
@@ -332,6 +342,34 @@ input:focus {
 }
 
 
+.announcement-form {
+
+  width: 100%;
+
+
+}
+
+.announcement-form .field {
+  float: left;
+  position: relative;
+}
+
+.announcement-form input {
+  width: 100%;
+}
+
+.announcement-form .third-width input,
+.announcement-form .third-width textarea {
+  width: 90%;
+}
+
+.announcement-form .actions {
+  clear: both;
+  width: 31.35%;
+}
+
+
+
 
 /* ------ Utility classes ------ */
 
@@ -359,7 +397,17 @@ input:focus {
   display: none;
 }
 
+.full-width {
+  width: 100%;
+}
 
+.third-width {
+  width: 33%;
+}
+
+.two-third-width {
+  width: 66%;
+}
 
 
 

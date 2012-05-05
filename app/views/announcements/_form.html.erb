@@ -1,4 +1,4 @@
-<%= form_for(@announcement) do |f| %>
+<%= form_for(@announcement, :html => { :class=> "announcement-form" }) do |f| %>
   <% if @announcement.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@announcement.errors.count, "error") %> prohibited this announcement from being saved:</h2>
@@ -11,41 +11,41 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="full-width field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
-  <div class="field">
+  <div class="third-width field">
     <%= f.label :description %><br />
     <%= f.text_area :description %>
   </div>
-  <div class="field">
-    <%= f.label :start_time %><br />
-    <%= f.datetime_select :start_time %>
+ <div class="third-width field">
+    <%= f.label :contact %><br />
+    <%= f.text_field :contact %>
   </div>
-  <div class="field">
-    <%= f.label :end_time %><br />
-    <%= f.datetime_select :end_time %>
+  <div class="third-width field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
   </div>
-  <div class="field">
+  <div class="two-third-width field">
+    <label>Start advertising on</label><br />
+    <%= f.date_select :announce_start_time %>
+  </div>
+  <div class="two-third-width field">
+    <label>Stop advertising after</label><br />
+    <%= f.date_select :announce_end_time %>
+  </div>
+  <div class="two-third-width field">
     <%= f.label :location %><br />
     <%= f.text_field :location %>
   </div>
   <div class="field">
-    <%= f.label :contact %><br />
-    <%= f.text_field :contact %>
+    <lable>Event starts on</label><br />
+    <%= f.datetime_select :start_time %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :announce_start_time %><br />
-    <%= f.date_select :announce_start_time %>
-  </div>
-  <div class="field">
-    <%= f.label :announce_end_time %><br />
-    <%= f.date_select :announce_end_time %>
+    <label>and ends on</label><br />
+    <%= f.datetime_select :end_time %>
   </div>
   <div class="actions">
     <%= f.submit :class => "button control" %>
