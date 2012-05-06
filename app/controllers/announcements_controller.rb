@@ -1,13 +1,13 @@
 class AnnouncementsController < ApplicationController
 
-  
-
   # GET /announcements
   # GET /announcements.xml
   def index
     @pending_announcements = []
     if admin_logged_in?
       @pending_announcements = Announcement.all_pending
+    elsif current_user
+      @pending_announcements = Announcement.all_current_user(current_user.id)
     end
 
     @current_approved_announcements = Announcement.all_current_approved
@@ -72,6 +72,7 @@ class AnnouncementsController < ApplicationController
   # PUT /announcements/1.xml
   def update
     @announcement = Announcement.find(params[:id])
+    @announcement.is_approved = false  # updated announcement requires approval
 
     respond_to do |format|
       if @announcement.update_attributes(params[:announcement])

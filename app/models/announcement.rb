@@ -11,6 +11,10 @@ class Announcement < ActiveRecord::Base
     self.where("is_approved = ? OR is_approved = ?", false, nil).order("start_time asc")
   end
 
+  def self.all_current_user(user_id)
+    self.where("(is_approved = ? OR is_approved = ?) AND user_id = ?", false, nil, user_id).order("start_time asc")
+  end
+
   def happening_on
     
   	is_multi_day = (end_time.month == start_time.month && end_time.day - start_time.day > 0) || (end_time.month - start_time.month > 0)

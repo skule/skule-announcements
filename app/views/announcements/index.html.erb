@@ -14,13 +14,19 @@
               <h5 class="location"><%= announcement.location %></h5>
             </div>
 
+            <% if admin_logged_in? || current_user != nil && is_owner(announcement.id, current_user.id) %>
+              <ul class="announcement-control-list control-list">
+            <% end %>
+
             <% if admin_logged_in? %>
-            <ul class="announcement-control-list control-list">
               <% if announcement.is_approved %>
                 <li class="announcement-control control"><%= link_to 'Reject', reject_announcement_path(announcement) %></li>
               <% else %>
                 <li class="announcement-control control"><%= link_to 'Approve', approve_announcement_path(announcement) %></li>
               <% end %>
+            <% end %>
+
+            <% if admin_logged_in? || current_user != nil && is_owner(announcement.id, current_user.id) %>
               <li class="announcement-control control"><%= link_to 'Edit', edit_announcement_path(announcement) %></li>
               <li class="announcement-control control"><%= link_to 'Delete', announcement_path(announcement), :confirm => 'Are you sure?', :method => :delete %></li>
             </ul>
@@ -45,9 +51,15 @@
         <% end %>
       </ul>
 
-    <% if admin_logged_in? %>
+    <% if current_user %>
+      <div class="announcement-list-title list-title">
+      <% if admin_logged_in? %>
+        <h3>Pending Announcments</h3>
+      <% else %>
+        <h3>My Pending Announcements</h3>
+      <% end %>
+      </div>
 
-      <div class="announcement-list-title list-title"><h3>Pending Announcments</h3></div>
       <ul class="announcement-list list pending-announcments">
         <% @pending_announcements.each do |announcement| %>
         <li>
