@@ -20,13 +20,23 @@ class Announcement < ActiveRecord::Base
   	is_multi_day = (end_time.month == start_time.month && end_time.day - start_time.day > 0) || (end_time.month - start_time.month > 0)
 
     if is_multi_day
-    	if(end_time.class == Date && start_time.class == Date)
-    		start_time.strftime("%m/%d/%Y") + " - " + end_time.strftime("%m/%d/%Y")
-    	else
-    		start_time.strftime("%I:%M %p %m/%d/%Y") + " - " + end_time.strftime("%I:%M %p %m/%d/%Y")
+    	if end_time.class == Date && start_time.class == Date
+    		start_time.strftime("%B #{start_time.day.ordinalize}, %Y") + " - " + end_time.strftime("%B #{start_time.day.ordinalize}, %Y")
+    	elsif end_time.hour == 0 && start_time.hour == 0
+        start_time.strftime("%B #{start_time.day.ordinalize}, %Y") + " - " + end_time.strftime("%B #{start_time.day.ordinalize}, %Y")
+      else
+    		start_time.strftime("%l:%M %p, %B #{start_time.day.ordinalize}, %Y") + " - " + end_time.strftime("%l:%M %p, %B #{start_time.day.ordinalize}, %Y")
     	end
     else
-    	start_time.strftime("%I:%M %p") + " - " + end_time.strftime("%I:%M %p, %m/%d/%Y")
+      if end_time - start_time > 0
+    	  start_time.strftime("%l:%M %p") + " - " + end_time.strftime("%l:%M %p, %B #{start_time.day.ordinalize}, %Y")
+      else
+        if end_time.hour == 0
+          start_time.strftime("%B #{start_time.day.ordinalize}, %Y")
+        else
+          start_time.strftime("%l:%M %p, %B #{start_time.day.ordinalize}, %Y")
+        end
+      end
     end
     
   end
