@@ -49,6 +49,7 @@ class AnnouncementsController < ApplicationController
   # GET /announcements/1/edit
   def edit
     @announcement = Announcement.find(params[:id])
+    @announcement.tag_string = @announcement.get_tag_string
   end
 
   # POST /announcements

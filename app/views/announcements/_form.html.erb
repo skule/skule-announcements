@@ -47,6 +47,10 @@
     <label>and ends on</label><br />
     <%= f.datetime_select :end_time %>
   </div>
+  <div class="two-third-width field">
+    <label>Tags (separated by commas)</labels><br />
+    <%= f.text_field :tag_string %>
+  </div>
   <div class="actions">
     <%= f.submit :class => "button control" %>
   </div>
