@@ -5,6 +5,8 @@ class Announcement < ActiveRecord::Base
 
   attr_accessor :tag_string
 
+  attr_protected :is_approved
+
   before_save :save_tags
 
   def self.all_current_approved

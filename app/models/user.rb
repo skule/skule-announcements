@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
 
 	attr_accessor :password
 
+	attr_protected :is_admin, :password_hash, :password_salt
+
 	before_save :encrypt_password
 
 	validates_confirmation_of :password
