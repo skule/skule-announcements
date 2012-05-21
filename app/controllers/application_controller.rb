@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   helper_method :current_user
   helper_method :admin_logged_in?
+  helper_method :verify_is_user
+  helper_method :verify_is_admin
 
   private
 
@@ -16,6 +18,14 @@ class ApplicationController < ActionController::Base
   	end
 
   	return false
+  end
+
+  def verify_is_user
+    (current_user.nil?) ? redirect_to(root_path) : true
+  end
+
+  def verify_is_admin
+    (admin_logged_in?) ? true : redirect_to(root_path)
   end
 
 end

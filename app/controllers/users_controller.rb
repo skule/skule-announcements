@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+
+  before_filter :verify_is_admin, :only => [:index, :destroy, :promote, :demote]
+  before_filter :verify_is_self, :only => [:edit, :update]
+
   def new
     @user = User.new
   end
@@ -60,11 +64,13 @@ class UsersController < ApplicationController
     set_is_admin(true)
   end
 
-
   # GET /users/1/demote
   def demote
     set_is_admin(false)
   end
+
+
+  private
 
   def set_is_admin(is_admin)
     user = User.find(params[:id])
@@ -80,6 +86,12 @@ class UsersController < ApplicationController
       end
     end
 
+  end
+
+  # returns true if the current resource requested by the user relates to that user or if that user is an admin
+  # otherwise, the user is redirected to the root page.
+  def verify_is_self
+    (current_user != nil && (admin_logged_in? || ((u = User.find(params[:id])) != nil && u == current_user))) ? true : redirect_to(root_path)
   end
 
 

@@ -1,5 +1,9 @@
 class AnnouncementsController < ApplicationController
 
+  before_filter :verify_is_user, :only => [:new, :create]
+  before_filter :verify_is_admin, :only => [:approve, :reject]
+  before_filter :verify_is_owner, :only => [:edit, :update, :destroy]
+
   # GET /announcements
   # GET /announcements.xml
   def index
@@ -108,6 +112,9 @@ class AnnouncementsController < ApplicationController
     set_is_approved(false)
   end
 
+
+  private
+
   def set_is_approved(is_approved)
     announcement = Announcement.find(params[:id])
     announcement.is_approved = is_approved
@@ -122,4 +129,11 @@ class AnnouncementsController < ApplicationController
       end
     end
   end
+
+  # returns true if the current resource requested by the user is owned by that user or if that user is an admin
+  # otherwise, the user is redirected to the root page.
+  def verify_is_owner
+    (current_user != nil && (admin_logged_in? || ((a = Announcement.find(params[:id])) != nil && a.user == current_user))) ? true : redirect_to(root_path)
+  end
+
 end
