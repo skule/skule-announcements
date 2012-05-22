@@ -33,9 +33,10 @@
             <div class="clear"></div>
             <% end %>
             
-            <div class="content">
+            <div class="content text-justify">
 
-              <p class="text-justify"><%= announcement.description %></p>
+              <% # safe to use raw() here as html_description does XSS escaping %>
+              <%= raw(announcement.html_description) %>
 
               <% if announcement.contact && announcement.contact != "" %>
               <p class="posted-by">

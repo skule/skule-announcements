@@ -5,8 +5,9 @@
 
 <p>
   <b>Description:</b>
-  <%= @announcement.description %>
 </p>
+<% # safe to use raw() here as html_description does XSS escaping %>
+<%= raw(@announcement.html_description) %>
 
 <p>
   <b>Start time:</b>
@@ -34,12 +35,12 @@
 </p>
 
 <p>
-  <b>Announce start time:</b>
+  <b>Start advertising on:</b>
   <%= @announcement.announce_start_time %>
 </p>
 
 <p>
-  <b>Announce end time:</b>
+  <b>Stop advertising after:</b>
   <%= @announcement.announce_end_time %>
 </p>
 

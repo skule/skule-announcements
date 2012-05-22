@@ -85,4 +85,27 @@ class Announcement < ActiveRecord::Base
       end
     end
   end
+
+  def html_description
+    # Escape description input to prevent XSS attacks
+    d = CGI.escapeHTML(self.description)
+    paragraphs = []
+
+    if d != nil
+      # check for Windows-style newlines first
+      if d.scan(/\r\n/).length > 0
+        paragraphs = d.split(/\r\n/)
+      # then check for Unix-style newlines
+      elsif d.scan(/\n/).length > 0
+        paragraphs = d.split(/\n/)
+      # then check for Mac-style newlines
+      elsif d.scan(/\r/).length > 0
+        paragraphs = d.split(/\r\n/)
+      else
+        paragraphs << description
+      end
+    end
+
+    return '<p>' + paragraphs.join('</p><p>') + '</p>'
+  end
 end
