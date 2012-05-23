@@ -17,7 +17,7 @@ a:visited { color: #666; }
 a:hover { color: #333; }
 
 div.field, div.actions {
-  margin-bottom: 10px;
+  margin-bottom: 1.0em;
 }
 
 textarea, input { outline: none; }
@@ -368,7 +368,15 @@ textarea {
   width: 31%;
 }
 
+.check_box_field input {
+  width: auto;
+  margin-right: 0.5em;
+  float: left;
+}
 
+.check_box_field p {
+  margin: 0;
+}
 
 
 /* ------ Utility classes ------ */
@@ -399,6 +407,10 @@ textarea {
 
 .full-width {
   width: 100%;
+}
+
+.quarter-width {
+  width: 25%;
 }
 
 .third-width {

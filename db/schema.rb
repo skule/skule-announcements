@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(:version => 20120505175658) do
   create_table "announcements", :force => true do |t|
     t.string   "title"
     t.text     "description"
+    t.boolean  "has_datetime",        :default => true
     t.datetime "start_time"
     t.datetime "end_time"
     t.string   "location"

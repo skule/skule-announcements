@@ -9,6 +9,7 @@
 <% # safe to use raw() here as html_description does XSS escaping %>
 <%= raw(@announcement.html_description) %>
 
+<% if @announcement.has_datetime %>
 <p>
   <b>Start time:</b>
   <%= @announcement.start_time %>
@@ -18,6 +19,7 @@
   <b>End time:</b>
   <%= @announcement.end_time %>
 </p>
+<% end %>
 
 <p>
   <b>Location:</b>

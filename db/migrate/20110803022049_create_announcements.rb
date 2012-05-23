@@ -4,6 +4,7 @@ class CreateAnnouncements < ActiveRecord::Migration
 
       t.string    :title
       t.text      :description
+      t.boolean   :has_datetime, :default => true
       t.datetime  :start_time
       t.datetime  :end_time
       t.string    :location

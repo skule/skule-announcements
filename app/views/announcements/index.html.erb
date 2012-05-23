@@ -10,7 +10,9 @@
             </div>
             <div class="meta">
               <% if announcement.user != nil %><span class="author-name">Submitted by <%= announcement.user.full_name %></span><% end %>
+              <% if announcement.has_datetime %>
               <h5 class="time"><%= announcement.happening_on %></h5>
+              <% end %>
               <h5 class="location"><%= announcement.location %></h5>
             </div>
 
@@ -68,7 +70,7 @@
 
             <div class="title">
               <h3><%= announcement.title %></h3>
-              <% if announcement.start_time != nil %>
+              <% if announcement.has_datetime && announcement.start_time != nil %>
               <span class="meta-time"><%= Date::ABBR_MONTHNAMES[announcement.start_time.month] + " " + announcement.start_time.day.to_s %></span>
               <% end %>
             </div>
@@ -91,7 +93,7 @@
         
           <div class="title">
             <h3><%= announcement.title %></h3>
-            <% if announcement.start_time != nil %>
+            <% if announcement.has_datetime && announcement.start_time != nil %>
             <span class="meta-time"><%= Date::ABBR_MONTHNAMES[announcement.start_time.month] + " " + announcement.start_time.day.to_s %></span>
             <% end %>
           </div>

@@ -1,5 +1,4 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+// Skule Announcements
 
 $(document).ready(function() {
 
@@ -18,24 +17,27 @@ $(document).ready(function() {
 
             return false;
         });
-
-
-
     }
 
+    if($('.announcement-form').length > 0) {
+
+        if($('.has_datetime_check_box').attr('checked') == 'checked') {
+            $('.datetime_field select').removeAttr('disabled');
+        } else {
+            $('.datetime_field select').attr('disabled', 'disabled');
+        }
+
+        $('.has_datetime_check_box').click(function() {
+            if($('.datetime_field select').attr('disabled') == 'disabled') {
+                $('.datetime_field select').removeAttr('disabled');
+            } else {
+                $('.datetime_field select').attr('disabled', 'disabled');
+            }
+        });
+    }
 
 });
 
-
-function inPlaceFocus() {
-
-}
-
-
-function inPlaceBlur() {
-
-
-}
 
 
 

@@ -27,11 +27,11 @@
     <%= f.label :email %><br />
     <%= f.text_field :email %>
   </div>
-  <div class="two-third-width field">
+  <div class="quarter-width field">
     <label>Start advertising on</label><br />
     <%= f.date_select :announce_start_time %>
   </div>
-  <div class="two-third-width field">
+  <div class="quarter-width field">
     <label>Stop advertising after</label><br />
     <%= f.date_select :announce_end_time %>
   </div>
@@ -39,11 +39,14 @@
     <%= f.label :location %><br />
     <%= f.text_field :location %>
   </div>
-  <div class="field">
+  <div class="two-third-width check_box_field field">
+      <%= f.check_box :has_datetime, :class => "has_datetime_check_box" %><p>This event has a start and end date</p>
+  </div>
+  <div class="datetime_field field">
     <lable>Event starts on</label><br />
     <%= f.datetime_select :start_time %>
   </div>
-  <div class="field">
+  <div class="datetime_field field">
     <label>and ends on</label><br />
     <%= f.datetime_select :end_time %>
   </div>
