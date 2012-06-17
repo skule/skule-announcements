@@ -21,6 +21,7 @@
             <div class="content">
 
               <p class="text-justify"><%= announcement.summary %></p>
+              <p><%= link_to 'Read more...', announcement %></p>
 
               <% if announcement.contact && announcement.contact != "" %>
               <p class="posted-by">

@@ -19,7 +19,8 @@ class AnnouncementsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @announcements }
+      format.xml  { render :xml => @current_approved_announcements }
+      format.atom
     end
   end
 
