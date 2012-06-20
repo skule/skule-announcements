@@ -5,51 +5,8 @@
       <ul class="announcement-details">
         <% @all_announcements.each do |announcement| %>
         <li class="announcement-details-item" id="announcement_<%= announcement.id %>">
-            <div class="title">
-              <h3><%= announcement.title %></h3>
-            </div>
-            <div class="meta">
-              <% if announcement.user != nil %><span class="author-name">Submitted by <%= announcement.user.full_name %></span><% end %>
-              <% if announcement.has_datetime %>
-              <h5 class="time"><%= announcement.happening_on %></h5>
-              <% end %>
-              <h5 class="location"><%= announcement.location %></h5>
-            </div>
-
-            <% if admin_logged_in? || current_user != nil && is_owner(announcement.id, current_user.id) %>
-              <ul class="announcement-control-list control-list">
-            <% end %>
-
-            <% if admin_logged_in? %>
-              <% if announcement.is_approved %>
-                <li class="announcement-control control"><%= link_to 'Reject', reject_announcement_path(announcement) %></li>
-              <% else %>
-                <li class="announcement-control control"><%= link_to 'Approve', approve_announcement_path(announcement) %></li>
-              <% end %>
-            <% end %>
-
-            <% if admin_logged_in? || current_user != nil && is_owner(announcement.id, current_user.id) %>
-              <li class="announcement-control control"><%= link_to 'Edit', edit_announcement_path(announcement) %></li>
-              <li class="announcement-control control"><%= link_to 'Delete', announcement_path(announcement), :confirm => 'Are you sure?', :method => :delete %></li>
-            </ul>
-            <div class="clear"></div>
-            <% end %>
-            
-            <div class="content text-justify">
-
-              <% # safe to use raw() here as html_description does XSS escaping %>
-              <%= raw(announcement.html_description) %>
-
-              <% if announcement.contact && announcement.contact != "" %>
-              <p class="posted-by">
-                Contact: <%= announcement.contact %>
-              
-                <% if announcement.email && announcement.email != "" %>
-                </br><%= announcement.email %>
-                <% end %>
-              </p>
-              <% end %>
-            </div>
+            <% @announcement = announcement %>
+            <%= render 'details' %>
         </li>
         <% end %>
       </ul>

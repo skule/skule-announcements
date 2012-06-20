@@ -47,7 +47,9 @@ ActiveRecord::Schema.define(:version => 20120505175658) do
     t.string   "email"
     t.string   "password_hash"
     t.string   "password_salt"
-    t.boolean  "is_admin",      :default => false
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
+    t.boolean  "is_admin",               :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -7,6 +7,9 @@ class CreateUsers < ActiveRecord::Migration
       t.string :password_hash
       t.string :password_salt
 
+      t.string :password_reset_token
+      t.datetime :password_reset_sent_at
+
       t.boolean :is_admin, :default => false
 
       t.timestamps

@@ -13,6 +13,19 @@ class User < ActiveRecord::Base
 	validates_presence_of  :email
 	validates_uniqueness_of :email
 
+	def send_password_reset
+		generate_token(:password_reset_token)
+		self.password_reset_sent_at = Time.zone.now
+		save!
+		UserMailer.password_reset(self).deliver
+	end
+
+	def generate_token(column)
+		begin
+			self[column] = SecureRandom.base64.tr("+/", "-_") #urlsafe hack for rails 3.0.x
+		end while User.exists?(column => self[column])
+	end
+
 	def self.all_admins
 		self.where("is_admin = ?", true)
 	end

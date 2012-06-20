@@ -129,6 +129,10 @@ input:focus {
   border: 1px solid #888;
 }
 
+.short-field {
+  font-size: 1.1em;
+}
+
 .button {
   font-size: 1.1em;
   color: #666;
@@ -294,19 +298,15 @@ textarea {
 }
 
 .announcement-details {
-
   float: right;
   width: 33%;
   margin: 0;
   padding: 0;
-
 }
 
 .announcement-details-item {
-
   padding: 1.0em 2.0em;
   list-style: none;
-
 }
 
 .announcement-details-item p {
@@ -335,18 +335,12 @@ textarea {
 }
 
 .posted-by {
-
-
   margin-top: 2.0em;
-
 }
 
 
 .announcement-form {
-
   width: 100%;
-
-
 }
 
 .announcement-form .field {
@@ -395,10 +389,8 @@ textarea {
 }
 
 .clear {
-  
   clear: both;
   float: none;
-  
 }
 
 .hidden {
