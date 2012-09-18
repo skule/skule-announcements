@@ -14,7 +14,9 @@
               <h3><%= announcement.title %></h3>
             </div>
             <div class="meta">
+              <% if @announcement.has_datetime %>
               <h5 class="time"><%= announcement.happening_on %></h5>
+              <% end %>
               <h5 class="location"><%= announcement.location %></h5>
             </div>
         
