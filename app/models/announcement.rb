@@ -89,6 +89,7 @@ class Announcement < ActiveRecord::Base
   def html_description
     # Escape description input to prevent XSS attacks
     d = CGI.escapeHTML(self.description)
+    
     paragraphs = []
 
     if d != nil
@@ -102,10 +103,18 @@ class Announcement < ActiveRecord::Base
       elsif d.scan(/\r/).length > 0
         paragraphs = d.split(/\r\n/)
       else
-        paragraphs << description
+        paragraphs << d
       end
     end
 
-    return '<p>' + paragraphs.join('</p><p>') + '</p>'
+    paragraphs = '<p>' + paragraphs.join('</p><p>') + '</p>'
+    
+    #use regex to detect url's and wrap them in an <a> tag
+    paragraphs.gsub!(/(?i)\b((?:[a-z][\w-]+:(?:\/{1,3}|[a-z0-9%])|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’]))/, '<a href="\0">\0</a>')
+    
+    # add in http:// if missing from anchor href
+    paragraphs.gsub!(/<a href="([^(https?:\/\/)])/, '<a href="http://\1')
+
+    return paragraphs
   end
 end
