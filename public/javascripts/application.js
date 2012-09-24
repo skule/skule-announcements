@@ -5,17 +5,33 @@ $(document).ready(function() {
     // If on announcement index page.
     if($('.announcements').length > 0) {
     
+        var selected = -1;
+        var numAnnouncements =  $('.announcement-list-item').length;
+
         $('.announcement-details-item').addClass('hidden');
-    
         $('.announcement-list-item').click(function() {
-
-            $('.announcement-list-item').removeClass('selected');
-            $(this).addClass('selected')
-
-            $('.announcement-details-item').addClass('hidden');
-            $($(this).attr('href')).removeClass('hidden');
-
+            selected = $('.announcement-list-item').index(this);
+            selectAnnouncement(selected);
             return false;
+        });
+
+        $(document).keydown(function(event) {
+            if(event.keyCode == 38 || event.keyCode == 40) {
+
+                if(event.keyCode == 38) {
+                    if(selected > 0) {
+                        selected--;
+                    }
+                } else {
+                    if(selected < numAnnouncements - 1) {
+                        selected ++;
+                    }
+                }
+
+                selectAnnouncement(selected);
+
+                event.preventDefault();
+            }
         });
     }
 
@@ -34,6 +50,14 @@ $(document).ready(function() {
                 $('.datetime_field select').attr('disabled', 'disabled');
             }
         });
+    }
+
+    function selectAnnouncement(a) {
+        $('.announcement-list-item').removeClass('selected');
+        $('.announcement-list-item:eq(' + a + ')').addClass('selected')
+
+        $('.announcement-details-item').addClass('hidden');
+        $($('.announcement-list-item:eq(' + a + ')').attr('href')).removeClass('hidden');
     }
 
 });
