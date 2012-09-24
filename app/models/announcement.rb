@@ -50,7 +50,7 @@ class Announcement < ActiveRecord::Base
   def summary
     
     # Take the first two sentences of the announcement description
-    description[/.+\. .+\./]
+    description[/^[^\.\?\!]+[\.\?\!]\s[^\.\?\!]+[\.\?\!]/]
       
   end
 
