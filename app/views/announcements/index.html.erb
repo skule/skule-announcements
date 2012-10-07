@@ -46,7 +46,7 @@
   	
       <% @current_approved_announcements.each do |announcement| %>
         <li>
-          <a href="#announcement_<%= announcement.id %>" class="announcement-list-item list-item">
+          <a href="#announcement_<%= announcement.id %>" class="announcement-list-item <% if announcement.is_important %>important <% end %>list-item">
         
           <div class="title">
             <h3><%= announcement.title %></h3>

@@ -10,7 +10,7 @@ class Announcement < ActiveRecord::Base
   before_save :save_tags
 
   def self.all_current_approved
-    self.where("announce_start_time <= ? AND announce_end_time >= ? AND is_approved = ?", Time.now, Time.now, true).order("start_time asc") 
+    self.where("announce_start_time <= ? AND announce_end_time >= ? AND is_approved = ?", Time.now, Time.now, true).order("is_important desc, start_time asc") 
   end
 
   def self.all_pending

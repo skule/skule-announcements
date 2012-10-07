@@ -9,7 +9,7 @@
 
       <ul class="announcement-details" style="text-align: justify; margin: 0; padding: 0; list-style: none;">
         <% @announcements.each do |announcement| %>
-        <li class="announcement-details-item" id="announcement_<%= announcement.id %>" style="margin: 0 0 3.0em 0; padding: 0;">
+        <li class="announcement-details-item" id="announcement_<%= announcement.id %>" style="<% if announcement.is_important %>background-color: #fff4e4; <% end %>margin: 0 0 3.0em 0; padding: 0;">
             <div class="title">
               <h3><%= announcement.title %></h3>
             </div>
