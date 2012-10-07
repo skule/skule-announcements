@@ -15,9 +15,9 @@
 
 <% if admin_logged_in? %>
   <% if @announcement.is_approved %>
-    <li class="announcement-control control"><%= link_to 'Reject', reject_announcement_path(@announcement) %></li>
+    <li class="announcement-control control"><%= link_to 'Reject', reject_announcement_path(@announcement), :method => :post %></li>
   <% else %>
-    <li class="announcement-control control"><%= link_to 'Approve', approve_announcement_path(@announcement) %></li>
+    <li class="announcement-control control"><%= link_to 'Approve', approve_announcement_path(@announcement), :method => :post %></li>
   <% end %>
 <% end %>
 
