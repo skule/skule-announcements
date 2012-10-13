@@ -227,6 +227,14 @@ h3 {
     background-color: #fff4e4;
   }
 
+  .announcements .important.selected {
+    background-color: #e5e9ea;
+  }
+
+  .announcements .important.selected:hover {
+    background-color: #dfe5e9;
+  }
+
   .list-item:hover {
     background-color: #e0e8f0;
   }
