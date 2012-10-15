@@ -27,11 +27,11 @@ class Announcement < ActiveRecord::Base
 
     if is_multi_day
     	if end_time.class == Date && start_time.class == Date
-    		start_time.strftime("%B #{start_time.day.ordinalize}, %Y") + " - " + end_time.strftime("%B #{start_time.day.ordinalize}, %Y")
+    		start_time.strftime("%B #{start_time.day.ordinalize}, %Y") + " - " + end_time.strftime("%B #{end_time.day.ordinalize}, %Y")
     	elsif end_time.hour == 0 && start_time.hour == 0
-        start_time.strftime("%B #{start_time.day.ordinalize}, %Y") + " - " + end_time.strftime("%B #{start_time.day.ordinalize}, %Y")
+        start_time.strftime("%B #{start_time.day.ordinalize}, %Y") + " - " + end_time.strftime("%B #{end_time.day.ordinalize}, %Y")
       else
-    		start_time.strftime("%l:%M %p, %B #{start_time.day.ordinalize}, %Y") + " - " + end_time.strftime("%l:%M %p, %B #{start_time.day.ordinalize}, %Y")
+    		start_time.strftime("%l:%M %p, %B #{start_time.day.ordinalize}, %Y") + " - " + end_time.strftime("%l:%M %p, %B #{end_time.day.ordinalize}, %Y")
     	end
     else
       if end_time - start_time > 0
