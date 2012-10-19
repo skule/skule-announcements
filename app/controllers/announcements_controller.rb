@@ -28,6 +28,7 @@ class AnnouncementsController < ApplicationController
   # GET /announcements/1.xml
   def show
     @announcement = Announcement.find(params[:id])
+    @title = @announcement.title
 
     respond_to do |format|
       format.html # show.html.erb
@@ -55,6 +56,7 @@ class AnnouncementsController < ApplicationController
   def edit
     @announcement = Announcement.find(params[:id])
     @announcement.tag_string = @announcement.get_tag_string
+    @title = @announcement.title
   end
 
   # POST /announcements
@@ -103,12 +105,12 @@ class AnnouncementsController < ApplicationController
     end
   end
 
-  # GET /announcements/1/approve
+  # POST /announcements/1/approve
   def approve
     set_is_approved(true)
   end
 
-  # GET /announcements/1/reject
+  # POST /announcements/1/reject
   def reject
     set_is_approved(false)
   end
