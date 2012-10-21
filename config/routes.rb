@@ -17,8 +17,9 @@ Announcements::Application.routes.draw do
   resources :password_resets
 
   resources :announcements do
-  	post 'approve', :on => :member
-  	post 'reject', :on => :member
+    post 'approve', :on => :member
+    post 'reject', :on => :member
+    post 'star', :on => :member
   end
 
 end

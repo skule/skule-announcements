@@ -15,7 +15,7 @@
 
 <% if admin_logged_in? %>
   <% if @announcement.is_approved %>
-    <li class="announcement-control star-control <%= @announcement.is_important ? 'star-control-starred ' : '' %>control"><%= link_to 'Star', star_announcement_path(@announcement), :method => :post %></li>
+    <li class="announcement-control star-control <%= @announcement.is_important ? 'star-control-starred ' : '' %>control"><%= link_to 'Star', star_announcement_path(@announcement), :title => (@announcement.is_important ? 'Remove as important' : 'Mark important'), :method => :post %></li>
     <li class="announcement-control control"><%= link_to 'Reject', reject_announcement_path(@announcement), :method => :post %></li>
   <% else %>
     <li class="announcement-control control"><%= link_to 'Approve', approve_announcement_path(@announcement), :method => :post %></li>
