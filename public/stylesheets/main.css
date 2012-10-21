@@ -284,6 +284,16 @@ h3 {
     color: #444;
   }
 
+  .star-control a {
+    background: url('../images/star_unselected.png') center center no-repeat;
+    text-indent: -10000px;
+    width: 20px;
+  }
+
+  .star-control-starred a {
+    background: url('../images/star.png') center center no-repeat;
+  }
+
   .user-control-list {
     position: absolute;
     right: 1.0em;

@@ -115,6 +115,21 @@ class AnnouncementsController < ApplicationController
     set_is_approved(false)
   end
 
+  # POST /announcements/1/star
+  def star
+    announcement = Announcement.find(params[:id])
+    announcement.is_important = !announcement.is_important  # toggle is starred
+
+    respond_to do |format|
+      if announcement.save
+        format.html { redirect_to(announcements_url) }
+        format.xml  { head:ok }        
+      else
+        format.html { redirect_to(announcements_url, :notice => 'Edit was not successfull.') }
+        format.xml  { render :xml => announcement.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
 
   private
 
