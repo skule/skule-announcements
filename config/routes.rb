@@ -10,8 +10,8 @@ Announcements::Application.routes.draw do
   get "signup" => "users#new", :as => "signup"
 
   resources :users do
-    get 'promote', :on => :member
-    get 'demote', :on => :member
+    post 'promote', :on => :member
+    post 'demote', :on => :member
   end
 
   resources :password_resets

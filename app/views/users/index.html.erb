@@ -11,10 +11,9 @@
 
           <ul class="user-control-list control-list">
               <li class="user-control control"><%= link_to 'Edit', edit_user_path(user) %></li>
-              <li class="user-control control"><%= link_to 'Revoke Admin', demote_user_path(user) %></li>
+              <li class="user-control control"><%= link_to 'Revoke Admin', demote_user_path(user), :method => :post %></li>
               <li class="user-control control"><%= link_to 'Delete', user_path(user), :confirm => 'Are you sure?', :method => :delete %></li>
           </ul>
-            
         </li>
         <% end %>
       <% if @admin_users.length == 0 %>
@@ -34,7 +33,7 @@
 
           <ul class="user-control-list control-list">
               <li class="user-control control"><%= link_to 'Edit', edit_user_path(user) %></li>
-              <li class="user-control control"><%= link_to 'Make Admin', promote_user_path(user) %></li>
+              <li class="user-control control"><%= link_to 'Make Admin', promote_user_path(user), :method => :post %></li>
               <li class="user-control control"><%= link_to 'Delete', user_path(user), :confirm => 'Are you sure?', :method => :delete %></li>
           </ul>
 
