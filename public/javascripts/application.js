@@ -7,6 +7,7 @@ $(document).ready(function() {
     
         var selected = -1;
         var numAnnouncements =  $('.announcement-list-item').length;
+        var prevYOffset = 0;
 
         $('.announcement-details-item').addClass('hidden');
         $('.announcement-list-item').click(function() {
@@ -31,6 +32,14 @@ $(document).ready(function() {
                 selectAnnouncement(selected);
 
                 event.preventDefault();
+            }
+        });
+
+        $(document).scroll(function(event) {
+            // Allow the details panel to travel back up to the top of the page
+            // when the user scrolls up
+            if(window.pageYOffset < $('.announcement-details').offset().top) {
+                positionDetailsTop();
             }
         });
     }
@@ -58,6 +67,20 @@ $(document).ready(function() {
 
         $('.announcement-details-item').addClass('hidden');
         $($('.announcement-list-item:eq(' + a + ')').attr('href')).removeClass('hidden');
+
+        positionDetailsTop();
+    }
+
+    function positionDetailsTop() {
+        // The current top offset of the announcemnt-details ul element
+        // Can be retrieved with $('.announcement-details').offset().top
+        detailsOffsetTop = 106; 
+
+        if(window.pageYOffset > detailsOffsetTop) {
+            $('.announcement-details').css('margin-top', window.pageYOffset - detailsOffsetTop);
+        } else {
+            $('.announcement-details').css('margin-top', 0);
+        }
     }
 
 });
