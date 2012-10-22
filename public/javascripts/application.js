@@ -7,7 +7,6 @@ $(document).ready(function() {
     
         var selected = -1;
         var numAnnouncements =  $('.announcement-list-item').length;
-        var prevYOffset = 0;
 
         $('.announcement-details-item').addClass('hidden');
         $('.announcement-list-item').click(function() {
