@@ -1,7 +1,7 @@
 class AnnouncementsController < ApplicationController
 
   before_filter :verify_is_user, :only => [:new, :create]
-  before_filter :verify_is_admin, :only => [:approve, :reject]
+  before_filter :verify_is_admin, :only => [:approve, :reject, :deliver]
   before_filter :verify_is_owner, :only => [:edit, :update, :destroy]
 
   # GET /announcements
@@ -127,6 +127,15 @@ class AnnouncementsController < ApplicationController
       else
         format.html { redirect_to(announcements_url, :notice => 'Edit was not successfull.') }
         format.xml  { render :xml => announcement.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+
+  # GET /announcements/deliver
+  def deliver
+    respond_to do |format|
+      if AnnouncementMailer.digest.deliver
+        format.html { redirect_to(announcements_url, :notice => 'Digest was successfully sent.') }
       end
     end
   end

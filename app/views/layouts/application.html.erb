@@ -23,6 +23,7 @@
 
 			<% if admin_logged_in? && params[:controller] == "announcements" && params[:action] == "index" %>
 				<%= link_to "Manage Users", users_path %>
+				<%= link_to "Send Digest", deliver_path, :confirm => 'Are you sure you want to spam your classmates?' %>
 			<% elsif admin_logged_in? && params[:controller] == "users" %>
 				<%= link_to "Return to Announcements", announcements_path %>
 			<% end %>
